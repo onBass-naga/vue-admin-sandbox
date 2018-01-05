@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import TextField from '@/components/shared/form_control/TextField'
 import LoadingButton from '@/components/shared/button/LoadingButton'
 import httpClient from '#mockable#/httpClient'
@@ -73,10 +74,15 @@ export default {
         password: this.password
       }
       httpClient.post('/login', requestBody).then(response => {
-        console.log(response)
         setAccessToken(response.data.access_token)
         this.isLoading = false
-        this.$router.push({name: 'Users'})
+        
+        const redirectPath = _.get(this.$router, `history.current.query.redirect`)
+        if (redirectPath) {
+          this.$router.push(redirectPath)  
+        } else {
+          this.$router.push({ name: 'Top' })
+        }
       }, error => {
         console.log(error)
         this.isLoading = false
