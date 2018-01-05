@@ -143,7 +143,7 @@
                       </span>
                     </td>
                     <td class="column">
-                      <span>2017/9/13</span>
+                      <span>{{customer.birthday}}</span>
                     </td>
                     <td class="column column-nbcommands">
                       <span>0</span>
@@ -221,7 +221,7 @@ export default {
     store.dispatch('findCustomers')
   },
   computed: {
-    customers () { return store.state.customers }
+    customers () { return store.getters.customers }
   }
 }
 </script>
