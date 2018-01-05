@@ -27,7 +27,7 @@ export default {
         { name: 'Categories', icon: require('@/assets/images/apple.svg'), link: {name: 'NotFound'} },
         { name: 'Reviews', icon: require('@/assets/images/apple.svg'), link: {name: 'NotFound'} },
         { name: 'Configuration', icon: require('@/assets/images/apple.svg'), link: {name: 'NotFound'} },
-        { name: 'Logout', icon: require('@/assets/images/apple.svg'), link: {name: 'NotFound'} }
+        { name: 'Logout', icon: require('@/assets/images/apple.svg'), link: {name: 'Logout'} }
       ]
     }
   }
