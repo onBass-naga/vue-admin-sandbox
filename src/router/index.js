@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/auth/Login'
 import Logout from '@/components/auth/Logout'
 import Customers from '@/components/customers/Customers'
+import CustomerList from '@/components/customers/CustomerList'
 import CustomerDetail from '@/components/customers/CustomerDetail'
 import NotFound from '@/components/error/NotFound'
 import * as auth from '@/utils/auth'
@@ -34,22 +35,22 @@ export default new Router({
       component: Logout
     },
     {
-      path: '/auth/logout',
-      name: 'Logout',
-      beforeEnter: removeAccessToken,
-      redirect: { name: 'Login' }
-    },
-    {
       path: '/customers',
-      name: 'Customers',
-      beforeEnter: requireAuth,
-      component: Customers
-    },
-    {
-      path: '/customers/:id',
-      name: 'CustomerDetail',
-      beforeEnter: requireAuth,
-      component: CustomerDetail
+      component: Customers,
+      children: [
+        {
+          path: ':id',
+          name: 'CustomerDetail',
+          beforeEnter: requireAuth,
+          component: CustomerDetail
+        },
+        {
+          path: '',
+          name: 'Customers',
+          beforeEnter: requireAuth,
+          component: CustomerList
+        }
+      ]
     },
     {
       path: '/',

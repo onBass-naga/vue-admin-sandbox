@@ -21,7 +21,7 @@ export default {
       client.get(path).then(response => {
         resolve(response)
       }, error => {
-        resolve(error)
+        reject(error)
       })
     })
   },
@@ -30,7 +30,25 @@ export default {
       client.post(path, body).then(response => {
         resolve(response)
       }, error => {
-        resolve(error)
+        reject(error)
+      })
+    })
+  },
+  put: (path, body) => {
+    return new Promise((resolve, reject) => {
+      client.put(path, body).then(response => {
+        resolve(response)
+      }, error => {
+        reject(error)
+      })
+    })
+  },
+  delete: (path) => {
+    return new Promise((resolve, reject) => {
+      client.delete(path).then(response => {
+        resolve(response)
+      }, error => {
+        reject(error)
       })
     })
   }
