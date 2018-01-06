@@ -10,7 +10,6 @@ import * as auth from '@/utils/auth'
 Vue.use(Router)
 
 const requireAuth = (to, from, next) => {
-  console.log('requireAuth')
   if (!auth.isLoggedIn()) {
     next({
       name: 'Login',
@@ -19,11 +18,6 @@ const requireAuth = (to, from, next) => {
   } else {
     next()
   }
-}
-
-const removeAccessToken = (to, from, next) => {
-  auth.removeToken()
-  next()
 }
 
 export default new Router({
