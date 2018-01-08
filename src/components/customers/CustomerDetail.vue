@@ -3,7 +3,7 @@
     <div style="color: rgba(0, 0, 0, 0.87); background-color: rgb(255, 255, 255); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; box-sizing: border-box; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; border-radius: 2px; z-index: 1; opacity: 1;">
       <div style="padding-bottom: 0px;">
         <div style="padding: 8px; position: relative; z-index: 2; display: inline-block; float: right;">
-          <a tabindex="0" href="#/customers" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgb(0, 188, 212); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: inherit; background-color: rgba(0, 0, 0, 0); text-align: center;">
+          <button tabindex="0" @click="backToList" type="button" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgb(0, 188, 212); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: inherit; background-color: rgba(0, 0, 0, 0); text-align: center;">
             <div>
               <svg viewBox="0 0 24 24" style="display: inline-block; color: rgba(0, 0, 0, 0.87); fill: rgb(0, 188, 212); height: 24px; width: 24px; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; vertical-align: middle; margin-left: 12px; margin-right: 0px;">
                 <path d="M 3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
@@ -12,8 +12,8 @@
                 List
               </span>
             </div>
-          </a>
-          <a tabindex="0" href="#/customers/121/delete" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgb(255, 64, 129); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: inherit; background-color: rgba(0, 0, 0, 0); text-align: center;">
+          </button>
+          <button tabindex="0" @click="remove" type="button" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgb(255, 64, 129); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: inherit; background-color: rgba(0, 0, 0, 0); text-align: center;">
             <div>
               <svg viewBox="0 0 24 24" style="display: inline-block; color: rgba(0, 0, 0, 0.87); fill: rgb(255, 64, 129); height: 24px; width: 24px; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; vertical-align: middle; margin-left: 12px; margin-right: 0px;">
                 <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
@@ -22,8 +22,8 @@
                 Delete
               </span>
             </div>
-          </a>
-          <button tabindex="0" type="button" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgb(0, 188, 212); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: hidden; background-color: rgba(0, 0, 0, 0); text-align: center;">
+          </button>
+          <button tabindex="0" @click="reflesh" type="button" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; min-width: 88px; color: rgb(0, 188, 212); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; border-radius: 2px; user-select: none; overflow: hidden; background-color: rgba(0, 0, 0, 0); text-align: center;">
             <div>
               <svg viewBox="0 0 24 24" style="display: inline-block; color: rgba(0, 0, 0, 0.87); fill: rgb(0, 188, 212); height: 24px; width: 24px; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; vertical-align: middle; margin-left: 12px; margin-right: 0px;">
                 <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"></path>
@@ -39,12 +39,12 @@
             <span>
               <img size="32" src="https://robohash.org/06df078dcb46cb783f42ac5f1007a0e6.png?size=32x32" style="color: rgb(255, 255, 255); background-color: rgb(188, 188, 188); user-select: none; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; border-radius: 50%; height: 32px; width: 32px; vertical-align: middle;">
               <span style="display: inline-block; width: 10.6667px;">&nbsp;</span>
-              Cornelia Bryant
+              {{state.firstName}} {{state.lastName}}
               </span>
             </span>
             <span style="font-size: 14px; color: rgba(0, 0, 0, 0.54); display: block;"></span>
         </div>
-        <form class="tabbed-form">
+        <form class="tabbed-form" @submit.prevent>
           <div style="padding: 0px 1em 1em;">
             <div value="0">
               <div style="width: 100%; background-color: white; white-space: nowrap; display: flex;">
@@ -93,51 +93,39 @@
                   <span>
                     <div class="aor-input aor-input-first_name" style="display: inline-block;">
                       <div style="font-size: 16px; line-height: 24px; width: 256px; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
-                      <label for="firstname-undefined-objectObject-55108" style="position: absolute; line-height: 22px; top: 38px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; z-index: 1; transform: scale(0.75) translate(0px, -28px); transform-origin: left top 0px; pointer-events: none; user-select: none; color: rgba(0, 0, 0, 0.3);">
-                        <span><!-- react-text: 2330 -->First name<!-- /react-text --></span>
-                      </label>
-                      <input type="text" name="first_name" value="Cornelia" id="firstname-undefined-objectObject-55108" style="padding: 0px; position: relative; width: 100%; border: none; outline: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.87); cursor: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; box-sizing: border-box; margin-top: 14px;">
-                      <div>
-                        <hr aria-hidden="true" style="border-top: none rgb(224, 224, 224); border-left: none rgb(224, 224, 224); border-right: none rgb(224, 224, 224); border-bottom: 1px solid rgb(224, 224, 224); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%;">
-                        <hr aria-hidden="true" style="border-top: none rgb(0, 188, 212); border-left: none rgb(0, 188, 212); border-right: none rgb(0, 188, 212); border-bottom: 2px solid rgb(0, 188, 212); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%; transform: scaleX(0); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;">
-                      </div>
+                      <text-field 
+                          label="First name" 
+                          name="firstName" 
+                          :on-change="val => firstNameChanged(val)" 
+                          :value="state.form.firstName"></text-field>
                     </div>
                   </div>
                   <div class="aor-input aor-input-last_name" style="display: inline-block; margin-left: 32px;">
                     <div style="font-size: 16px; line-height: 24px; width: 256px; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
-                      <label for="lastname-undefined-objectObject-1986" style="position: absolute; line-height: 22px; top: 38px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; z-index: 1; transform: scale(0.75) translate(0px, -28px); transform-origin: left top 0px; pointer-events: none; user-select: none; color: rgba(0, 0, 0, 0.3);">
-                        <span><!-- react-text: 2339 -->Last name<!-- /react-text --></span>
-                      </label>
-                      <input type="text" name="last_name" value="Bryant" id="lastname-undefined-objectObject-1986" style="padding: 0px; position: relative; width: 100%; border: none; outline: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.87); cursor: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; box-sizing: border-box; margin-top: 14px;">
-                      <div>
-                        <hr aria-hidden="true" style="border-top: none rgb(224, 224, 224); border-left: none rgb(224, 224, 224); border-right: none rgb(224, 224, 224); border-bottom: 1px solid rgb(224, 224, 224); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%;">
-                        <hr aria-hidden="true" style="border-top: none rgb(0, 188, 212); border-left: none rgb(0, 188, 212); border-right: none rgb(0, 188, 212); border-bottom: 2px solid rgb(0, 188, 212); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%; transform: scaleX(0); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;">
-                      </div>
+                      <text-field 
+                          label="Last name" 
+                          name="lastName" 
+                          :on-change="val => lastNameChanged(val)" 
+                          :value="state.form.lastName"></text-field>
                     </div>
                   </div>
                   <div class="aor-input aor-input-email" style="width: 544px;">
                     <div style="font-size: 16px; line-height: 24px; width: 100%; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
-                      <label for="email-undefined-objectObject-42459" style="position: absolute; line-height: 22px; top: 38px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; z-index: 1; transform: scale(0.75) translate(0px, -28px); transform-origin: left top 0px; pointer-events: none; user-select: none; color: rgba(0, 0, 0, 0.3);">
-                        <span><!-- react-text: 2348 -->Email<!-- /react-text --></span>
-                      </label>
-                      <input type="email" name="email" value="zenfir@pipdev.com" id="email-undefined-objectObject-42459" style="padding: 0px; position: relative; width: 100%; border: none; outline: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.87); cursor: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; box-sizing: border-box; margin-top: 14px;">
-                      <div>
-                        <hr aria-hidden="true" style="border-top: none rgb(224, 224, 224); border-left: none rgb(224, 224, 224); border-right: none rgb(224, 224, 224); border-bottom: 1px solid rgb(224, 224, 224); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%;">
-                        <hr aria-hidden="true" style="border-top: none rgb(0, 188, 212); border-left: none rgb(0, 188, 212); border-right: none rgb(0, 188, 212); border-bottom: 2px solid rgb(0, 188, 212); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%; transform: scaleX(0); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;">
-                      </div>
+                      <text-field 
+                          label="Email" 
+                          name="email" 
+                          :on-change="val => emailChanged(val)" 
+                          :value="state.form.email"></text-field>
                     </div>
                   </div>
                   <div class="aor-input aor-input-birthday">
                     <div>
                       <div style="font-size: 16px; line-height: 24px; width: 256px; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
-                        <label for="birthday-undefined-objectObject-11069" style="position: absolute; line-height: 22px; top: 38px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; z-index: 1; transform: scale(1) translate(0px, 0px); transform-origin: left top 0px; pointer-events: none; user-select: none; color: rgba(0, 0, 0, 0.3);">
-                          <span><!-- react-text: 2358 -->Birthday<!-- /react-text --></span>
-                        </label>
-                        <input type="text" name="birthday" value="" id="birthday-undefined-objectObject-11069" style="padding: 0px; position: relative; width: 100%; border: none; outline: none; background-color: rgba(0, 0, 0, 0); color: rgba(0, 0, 0, 0.87); cursor: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; opacity: 1; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 100%; box-sizing: border-box; margin-top: 14px;">
-                        <div>
-                          <hr aria-hidden="true" style="border-top: none rgb(224, 224, 224); border-left: none rgb(224, 224, 224); border-right: none rgb(224, 224, 224); border-bottom: 1px solid rgb(224, 224, 224); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%;">
-                          <hr aria-hidden="true" style="border-top: none rgb(0, 188, 212); border-left: none rgb(0, 188, 212); border-right: none rgb(0, 188, 212); border-bottom: 2px solid rgb(0, 188, 212); bottom: 8px; box-sizing: content-box; margin: 0px; position: absolute; width: 100%; transform: scaleX(0); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;">
-                        </div>
+                        <text-field 
+                          label="Email" 
+                          name="birthday" 
+                          :on-change="val => birthdayChanged(val)" 
+                          :value="state.form.birthday"></text-field>
                       </div>
                       <div>
                         <div style="display: none;"><!-- react-empty: 2365 --><!-- react-empty: 2366 -->
@@ -395,16 +383,10 @@
     <div style="box-sizing: border-box; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(232, 232, 232); height: 56px; padding: 0px 24px; display: flex; justify-content: space-between;">
       <div style="position: relative; display: flex; justify-content: space-between; align-items: center;">
         <div style="color: rgba(0, 0, 0, 0.87); background-color: rgb(255, 255, 255); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; box-sizing: border-box; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; border-radius: 2px; display: inline-block; min-width: 88px; margin: 10px 24px; position: relative;">
-        <button tabindex="0" type="submit" style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: inherit; font-weight: inherit; position: relative; height: 36px; line-height: 36px; width: 100%; border-radius: 2px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; background-color: rgb(0, 188, 212); text-align: center;">
-          <div>
-            <div style="height: 36px; border-radius: 2px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; top: 0px;">
-              <svg viewBox="0 0 24 24" style="display: inline-block; color: rgba(0, 0, 0, 0.87); fill: rgb(255, 255, 255); height: 24px; width: 24px; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; vertical-align: middle; margin-left: 12px; margin-right: 0px;">
-                <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"></path>
-              </svg>
-              <span style="position: relative; opacity: 1; font-size: 14px; letter-spacing: 0px; text-transform: uppercase; font-weight: 500; margin: 0px; user-select: none; padding-left: 8px; padding-right: 16px; color: rgb(255, 255, 255);">Save</span>
-            </div>
-          </div>
-        </button>
+        <loading-button
+                label="SAVE"
+                :is-loading="isLoading"
+                :on-click="() => save()"></loading-button>
         </div>
             </div>
           </div>
@@ -415,10 +397,119 @@
 </template>
 
 <script>
+import TextField from '@/components/shared/form_control/TextField'
+import LoadingButton from '@/components/shared/button/LoadingButton'
+
 export default {
-  name: 'CustomerDetail'
+  name: 'CustomerDetail',
+  components: {
+    TextField,
+    LoadingButton
+  },
+  data: function () {
+    return {
+      state: {
+        id: null,
+        firstName: '',
+        lastName: '',
+        form: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          birthday: null
+        }
+      },
+      isLoading: false
+    }
+  },
+  methods: {
+    setCustomer: function () {
+      if (!this.$route.params.id) {
+        return
+      }
+
+      const id = parseInt(this.$route.params.id, 10)
+      const customer = this.$store.getters.customer(id)
+
+      if (customer) {
+        this.state = {
+          id: customer.id,
+          firstName: customer.firstName,
+          lastName: customer.lastName,
+          form: {
+            firstName: customer.firstName,
+            lastName: customer.lastName,
+            email: customer.email,
+            birthday: customer.birthday
+          }
+        }
+      }
+    },
+    firstNameChanged: function (value) {
+      console.log(`firstNameChanged: ${value}`)
+      this.state.form.firstName = value
+    },
+    lastNameChanged: function (value) {
+      console.log(`lastNameChanged: ${value}`)
+      this.state.form.lastName = value
+    },
+    emailChanged: function (value) {
+      console.log(`emailChanged: ${value}`)
+      this.state.form.email = value
+    },
+    birthdayChanged: function (value) {
+      console.log(`birthdayChanged: ${value}`)
+      this.state.form.birthday = value
+    },
+    backToList: function () {
+      this.$router.push({ name: 'Customers' })
+    },
+    reflesh: function () {
+      this.setCustomer()
+    },
+    remove: function () {
+      if (window.confirm('Are you sure ?')) {
+        this.$store.dispatch('removeCustomer', this.state.id).then(
+          () => {
+            this.backToList()
+          },
+          error => {
+            console.log(error)
+          }
+        )
+      }
+    },
+    save: function () {
+      const customer = Object.assign({}, this.state.form, { id: this.state.id })
+
+      this.$store.dispatch('updateCustomer', customer).then(
+        () => {
+          this.isLoading = false
+          this.setCustomer()
+        },
+        error => {
+          console.log(error)
+          this.isLoading = false
+        }
+      )
+      this.isLoading = true
+    }
+  },
+  computed: {
+    storeCustomer () {
+      return this.$store.state.customers
+    }
+  },
+  mounted: function () {
+    this.setCustomer()
+
+    this.$store.watch(this.$store.getters.customers, () => {
+      this.setCustomer()
+    })
+  }
 }
 </script>
 
 <style scoped>
+
 </style>
